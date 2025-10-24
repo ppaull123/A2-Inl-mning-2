@@ -1,0 +1,122 @@
+@import 'variables';
+
+header {
+    background-color: $color-dark;
+    color: white;
+    padding: 10px 20px;
+
+
+    nav {
+        display: none;
+
+        @media (min-width: $bp-desktop) {
+            font-size: 0.6rem;
+        }
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 40px 20px;
+
+        .logo {
+            font-family: 'Monofett';
+            max-height: 100px;
+            border: 2px solid white;
+            border-radius: 17px;
+            color: white;
+            text-decoration: none;
+            font-size: 40px;
+            padding: 35px 60px 5px 10px;
+
+            @media (min-width: $bp-desktop) {
+                border: 6px solid white;
+            }
+
+            @media (min-width: $bp-medium) {
+                border: 6px solid white;
+            }
+
+        }
+
+        .head-title {
+            width: 6ch;
+            word-wrap: break-word;
+            font-size: 1rem;
+            margin: 0 0 0 10px;
+        }
+    }
+
+
+    @media (min-width: $bp-desktop) {
+        .header {
+            align-items: flex-end;
+
+            .head-title {
+                width: auto;
+                font-size: 1rem;
+            }
+        }
+
+        nav {
+            display: block;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 10%;
+                font-size: 1em;
+
+                li a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+
+                li.contact-us a {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $bp-medium) {
+        .header {
+            align-items: flex-end;
+
+            .head-title {
+                width: auto;
+                font-size: 1rem;
+            }
+        }
+
+        nav {
+            display: block;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 10%;
+                font-size: 0.5rem;
+
+                li a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+
+                li.contact-us a {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+}
+
