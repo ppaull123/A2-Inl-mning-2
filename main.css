@@ -48,7 +48,6 @@
   font-weight: bold;
   font-size: 24px;
   border: none;
-  cursor: pointer;
 }
 .btn--online {
   background: none;
@@ -195,78 +194,75 @@
 }
 
 header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   background-color: #011827;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
 }
-header nav {
-  display: none;
+header .openMenu {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: none;
+  padding: 20px 10px;
+}
+header .openMenu span {
+  display: block;
+  width: 51px;
+  height: 7px;
+  background: white;
+  border-radius: 10px;
+}
+@media (min-width: 767px) {
+  header {
+    display: block;
+    font-size: 0.6rem;
+    background-color: #011827;
+    color: white;
+    padding: 10px 20px;
+  }
+  header .openMenu span {
+    display: none;
+  }
 }
 @media (min-width: 1200px) {
-  header nav {
+  header {
+    display: block;
     font-size: 0.6rem;
+    background-color: #011827;
+    color: white;
+    padding: 10px 20px;
+  }
+  header .openMenu span {
+    display: none;
   }
 }
 header .header {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 40px 20px;
+  padding: 20px 10px;
 }
 header .header .logo {
   font-family: "Monofett";
   max-height: 100px;
-  border: 2px solid white;
+  border: 6px solid white;
   border-radius: 17px;
   color: white;
   text-decoration: none;
   font-size: 40px;
-  padding: 35px 60px 5px 10px;
-}
-@media (min-width: 1200px) {
-  header .header .logo {
-    border: 6px solid white;
-  }
-}
-@media (min-width: 767px) {
-  header .header .logo {
-    border: 6px solid white;
-  }
+  padding: 30px 45px 5px 10px;
 }
 header .header .head-title {
   width: 6ch;
   word-wrap: break-word;
   font-size: 1rem;
   margin: 0 0 0 10px;
-}
-@media (min-width: 1200px) {
-  header .header {
-    align-items: flex-end;
-  }
-  header .header .head-title {
-    width: auto;
-    font-size: 1rem;
-  }
-  header nav {
-    display: block;
-  }
-  header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10%;
-    font-size: 1em;
-  }
-  header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  header nav ul li.contact-us a {
-    color: #8ACFE5;
-  }
 }
 @media (min-width: 767px) {
   header .header {
@@ -296,6 +292,88 @@ header .header .head-title {
   header nav ul li.contact-us a {
     color: #8ACFE5;
   }
+}
+@media (min-width: 1200px) {
+  header .header {
+    align-items: flex-end;
+  }
+  header .header .head-title {
+    width: auto;
+    font-size: 1rem;
+  }
+  header nav {
+    display: block;
+  }
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    font-size: 0.6rem;
+  }
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  header nav ul li.contact-us a {
+    color: #8ACFE5;
+  }
+}
+
+@media (max-width: 767px) {
+  nav {
+    position: fixed;
+    inset: 0;
+    background: #011827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    z-index: -10;
+    transition: 0.4s;
+  }
+  nav .nav-menuContent {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+  }
+  nav ul {
+    gap: 70px;
+    font-size: 1.5rem;
+    list-style: none;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  nav .closeBtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+  }
+  nav.active {
+    opacity: 1;
+    z-index: 10;
+    pointer-events: all;
+  }
+}
+body.menu-open > :not(header) {
+  opacity: 0.5;
+}
+
+header.menu-open {
+  background-color: #2d3941;
 }
 
 .buttons {
@@ -348,7 +426,6 @@ header .header .head-title {
   font-weight: bold;
   font-size: 24px;
   border: none;
-  cursor: pointer;
 }
 .btn--online {
   background: none;

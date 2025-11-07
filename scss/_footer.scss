@@ -70,7 +70,7 @@ footer {
         }
     }
 
-        @media (min-width: $bp-desktop) {
+    @media (min-width: $bp-desktop) {
         .footer {
             display: grid;
             grid-template-columns: 60% 10% 10%;
